@@ -1,10 +1,12 @@
 import React from 'react'
-import HeroSection from '../components/HeroSection/Hero';
+import HeroDescription from '../components/HeroSection/HeroDescription';
+import Hero from '../components/HeroSection/Hero';
 
 const Home = () => {
     return (
         <div>
-            <HeroSection />
+            <Hero />
+            <HeroDescription />
         </div>
     )
 }
