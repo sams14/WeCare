@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router";
+import { Switch, Route,Redirect } from "react-router";
 import Home from './pages/Home';
 
 const MainComponent = () => {
@@ -9,7 +9,7 @@ const MainComponent = () => {
         <Route path="/home" exact>
           <Home />
         </Route>
-
+        <Redirect from="*" to="/home" />
       </Switch>
     </div>
   );

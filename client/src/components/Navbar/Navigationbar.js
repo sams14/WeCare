@@ -2,11 +2,12 @@ import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import { ChevronDownIcon } from "@heroicons/react/solid";
+import logo from '../../assets/img/d5b2e55d-a696-42c8-ad23-7e8638465b77.svg';
 
 const navigation = [
-  { name: "Dashboard", href: "#", current: false },
-  { name: "Team", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
+  { name: "Doctors", href: "#", current: false },
+  { name: "Consult", href: "#", current: false },
+  { name: "Diagnostics", href: "#", current: false },
   { name: "Calendar", href: "#", current: false },
 ];
 
@@ -34,16 +35,19 @@ export default function Navigationbar() {
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
+                  {/* for responsive screen */}
                   <img
                     className="block lg:hidden h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                    alt="Workflow"
+                    src= {logo}
+                    alt="WeCare"
                   />
+                  {/* for large screen */}
                   <img
                     className="hidden lg:block h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
-                    alt="Workflow"
+                    src={logo}
+                    alt="WeCare"
                   />
+                  <span className="hidden md:block color text-gray-100 px-3 py-2 rounded-md text-base font-bold"> WeCare</span>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
