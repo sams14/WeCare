@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import { ChevronDownIcon } from "@heroicons/react/solid";
-import logo from '../../assets/img/d5b2e55d-a696-42c8-ad23-7e8638465b77.svg';
+import logo from "../../assets/img/d5b2e55d-a696-42c8-ad23-7e8638465b77.svg";
 
 const navigation = [
   { name: "Doctors", href: "#", current: false },
@@ -38,7 +38,7 @@ export default function Navigationbar() {
                   {/* for responsive screen */}
                   <img
                     className="block lg:hidden h-8 w-auto"
-                    src= {logo}
+                    src={logo}
                     alt="WeCare"
                   />
                   {/* for large screen */}
@@ -47,7 +47,10 @@ export default function Navigationbar() {
                     src={logo}
                     alt="WeCare"
                   />
-                  <span className="hidden md:block color text-gray-100 px-3 py-2 rounded-md text-base font-bold"> WeCare</span>
+                  <span className="hidden md:block color text-gray-100 px-3 py-2 rounded-md text-base font-bold">
+                    {" "}
+                    WeCare
+                  </span>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
@@ -75,7 +78,7 @@ export default function Navigationbar() {
                     <>
                       <div>
                         <Menu.Button className="inline-flex justify-center w-full  shadow-sm px-4 py-2 bg-transparent text-sm font-medium text-gray-300 hover:text-gray-100 ">
-                         <span className="md:visible invisible">Options</span>
+                          <span className="md:visible invisible">Options</span>
                           <ChevronDownIcon
                             className="-mr-1 ml-2 h-5 w-5"
                             aria-hidden="true"
@@ -215,13 +218,13 @@ export default function Navigationbar() {
                     </>
                   )}
                 </Menu>
-                <button className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                {/* <button className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                   <span className="sr-only">View notifications</span>
                   <BellIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
+                </button> */}
 
                 {/* Profile dropdown */}
-                <Menu as="div" className="ml-3 relative">
+                {/* <Menu as="div" className="ml-3 relative">
                   {({ open }) => (
                     <>
                       <div>
@@ -291,6 +294,11 @@ export default function Navigationbar() {
                       </Transition>
                     </>
                   )}
+                </Menu> */}
+                <Menu>
+                  <Menu.Button className="inline-flex items-center px-4 py-2 border-2 rounded-md shadow-sm text-sm font-medium text-blue-800 bg-transparent hover:bg-blue-400 hover:text-gray-50 ">
+                    Login/Signup
+                  </Menu.Button>
                 </Menu>
               </div>
             </div>
