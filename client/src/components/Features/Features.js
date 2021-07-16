@@ -3,7 +3,7 @@ import FeaturesCard from "../FreaturesCard/FeaturesCard"
 const features = () => {
     return (
         <>
-            <section class="text-gray-400 bg-gray-900 body-font">
+            <section class="text-gray-400 body-font">
                 <div class="container px-5 py-24 mx-auto">
                     <div class="text-center mb-20">
                         <h1 class="sm:text-3xl text-2xl font-medium title-font text-white mb-4">Raw Denim Heirloom Man Braid</h1>
