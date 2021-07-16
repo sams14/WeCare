@@ -4,7 +4,7 @@ import SearchIcon from '@material-ui/icons/Search';
 const Hero = () => {
     return (
         <>
-            <section class="text-gray-400 bg-gray-900 body-font">
+            <section class="text-gray-400 body-font">
                 <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
                     {/* <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600" /> */}
                     <div class="pt-2 my-6 relative mx-auto text-gray-600">
