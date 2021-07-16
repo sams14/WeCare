@@ -11,10 +11,10 @@ const Home = () => {
         <div>
             <Hero />
             <HeroDescription />
+            <Features />
             <HeroAppDownload/>
             <Statistic/>
             <Footer/>
-            <Features />
         </div>
     )
 }
