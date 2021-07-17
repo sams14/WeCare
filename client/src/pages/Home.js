@@ -3,7 +3,6 @@ import HeroDescription from '../components/HeroSection/HeroDescription';
 import Hero from '../components/HeroSection/Hero';
 import  HeroAppDownload  from '../components/HeroSection/HeroAppDownload';
 import Statistic from '../components/Statistics/Statistic';
-import Footer from '../components/Footer/Footer';
 import Features from '../components/Features/Features';
 
 const Home = () => {
@@ -14,7 +13,6 @@ const Home = () => {
             <Features />
             <HeroAppDownload/>
             <Statistic/>
-            <Footer/>
         </div>
     )
 }
