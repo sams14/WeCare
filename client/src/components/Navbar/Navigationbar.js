@@ -5,10 +5,10 @@ import { ChevronDownIcon } from "@heroicons/react/solid";
 import logo from "../../assets/img/d5b2e55d-a696-42c8-ad23-7e8638465b77.svg";
 
 const navigation = [
-    { name: "Doctors", href: "#", current: false },
-    { name: "Consult", href: "#", current: false },
-    { name: "Diagnostics", href: "#", current: false },
-    { name: "Calendar", href: "#", current: false },
+    { name: "Doctors", href: "/doctors", current: false },
+    { name: "Consult", href: "/consult", current: false },
+    { name: "Diagnostics", href: "/diagnostics", current: false },
+    { name: "Calendar", href: "/calendar", current: false },
 ];
 
 function classNames(...classes) {

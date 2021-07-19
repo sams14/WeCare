@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "./components/Footer/Footer";
 import Navbar from './components/Navbar/Navigationbar';
 import MainComponent from "./MainComponent";
 
@@ -7,7 +8,7 @@ const App = () => {
         <div>
             <Navbar />
             <MainComponent />
-            {/* <Footer /> */}
+            <Footer />
         </div>
     );
 };

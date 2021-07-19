@@ -1,5 +1,7 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router";
+import Consult from "./pages/Consult";
+import Doctors from "./pages/Doctors";
 import Home from './pages/Home';
 
 const MainComponent = () => {
@@ -9,6 +11,13 @@ const MainComponent = () => {
                 <Route path="/home" exact>
                     <Home />
                 </Route>
+                <Route path="/doctors" exact>
+                    <Doctors />
+                </Route>
+                <Route path="/consult" exact>
+                    <Consult />
+                </Route>
+
                 <Redirect from="*" to="/home" />
             </Switch>
         </div>
