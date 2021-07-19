@@ -273,7 +273,9 @@ const Navigationbar=() => {
                 </Menu> */}
                 <Menu>
                   <Menu.Button className="inline-flex items-center px-4 py-2 border-2 border-blue-700 shadow-sm text-sm text-blue-600 bg-transparent hover:bg-blue-600 hover:text-white rounded-full font-semibold ">
+                  <NavLink to="/userlogin">
                     Login/Signup
+                  </NavLink>
                   </Menu.Button>
                 </Menu>
               </div>
