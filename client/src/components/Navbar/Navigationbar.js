@@ -1,31 +1,26 @@
 import { Fragment } from "react";
+import {NavLink} from 'react-router-dom';
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import CardGiftcardIcon from '@material-ui/icons/CardGiftcard';
-import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
+// import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import logo from "../../assets/img/d5b2e55d-a696-42c8-ad23-7e8638465b77.svg";
 
+
 const navigation = [
-<<<<<<< HEAD
     { name: "Doctors", href: "/doctors", current: false },
     { name: "Consult", href: "/consult", current: false },
     { name: "Diagnostics", href: "/diagnostics", current: false },
     { name: "Calendar", href: "/calendar", current: false },
-=======
-  { name: "Doctors", href: "#", current: false },
-  { name: "Consult", href: "#", current: false },
-  { name: "Diagnostics", href: "#", current: false },
-  { name: "Social", href: "#", current: false },
->>>>>>> 27b68ae0a1fe00159b3c8dff52ef88c811757279
 ];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Navigationbar() {
+const Navigationbar=() => {
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -65,9 +60,9 @@ export default function Navigationbar() {
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <a
+                      <NavLink
                         key={item.name}
-                        href={item.href}
+                        to={item.href}
                         className={classNames(
                           item.current
                             ? "bg-gray-900 text-white"
@@ -77,7 +72,7 @@ export default function Navigationbar() {
                         aria-current={item.current ? "page" : undefined}
                       >
                         {item.name}
-                      </a>
+                      </NavLink>
                     ))}
                   </div>
                 </div>
@@ -308,4 +303,6 @@ export default function Navigationbar() {
       )}
     </Disclosure>
   );
-}
+};
+
+export default Navigationbar;
