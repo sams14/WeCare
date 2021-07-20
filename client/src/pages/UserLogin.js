@@ -1,4 +1,5 @@
 import React from "react";
+import { GoogleLoginButton } from "react-social-login-buttons";
 
 const UserLogin = () => {
   return (
@@ -52,6 +53,11 @@ const UserLogin = () => {
                   >
                     Log In
                   </button>
+                </div>
+                <div class="mt-6">
+                <GoogleLoginButton >
+                    <span>Login With Google</span>
+                </GoogleLoginButton>
                 </div>
               </form>
               <div class="mt-12 text-sm font-display font-semibold text-gray-700 text-center">

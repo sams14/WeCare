@@ -39,6 +39,7 @@ const Navigationbar=() => {
                 </Disclosure.Button>
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+               <NavLink to='/home'>
                 <div className="flex-shrink-0 flex items-center">
                   {/* for responsive screen */}
                   <img
@@ -57,6 +58,7 @@ const Navigationbar=() => {
                     WeCare
                   </span>
                 </div>
+                </NavLink>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
