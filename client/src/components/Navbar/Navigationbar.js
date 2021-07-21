@@ -1,26 +1,25 @@
 import { Fragment } from "react";
-import {NavLink} from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import { ChevronDownIcon } from "@heroicons/react/solid";
-import CardGiftcardIcon from '@material-ui/icons/CardGiftcard';
+import CardGiftcardIcon from "@material-ui/icons/CardGiftcard";
 // import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
-import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import logo from "../../assets/img/d5b2e55d-a696-42c8-ad23-7e8638465b77.svg";
 
-
 const navigation = [
-    { name: "Doctors", href: "/doctors", current: false },
-    { name: "Consult", href: "/consult", current: false },
-    { name: "Diagnostics", href: "/diagnostics", current: false },
-    { name: "Calendar", href: "/calendar", current: false },
+  { name: "Doctors", href: "/doctors", current: false },
+  { name: "Consult", href: "/consult", current: false },
+  { name: "Diagnostics", href: "/diagnostics", current: false },
+  { name: "Social", href: "/social", current: false },
 ];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const Navigationbar=() => {
+const Navigationbar = () => {
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -39,25 +38,25 @@ const Navigationbar=() => {
                 </Disclosure.Button>
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-               <NavLink to='/home'>
-                <div className="flex-shrink-0 flex items-center">
-                  {/* for responsive screen */}
-                  <img
-                    className="block lg:hidden h-8 w-auto"
-                    src={logo}
-                    alt="WeCare"
-                  />
-                  {/* for large screen */}
-                  <img
-                    className="hidden lg:block h-8 w-auto"
-                    src={logo}
-                    alt="WeCare"
-                  />
-                  <span className="hidden md:block color text-gray-100 px-3 py-2 rounded-md text-base font-bold">
-                    {" "}
-                    WeCare
-                  </span>
-                </div>
+                <NavLink to="/home">
+                  <div className="flex-shrink-0 flex items-center">
+                    {/* for responsive screen */}
+                    <img
+                      className="block lg:hidden h-8 w-auto"
+                      src={logo}
+                      alt="WeCare"
+                    />
+                    {/* for large screen */}
+                    <img
+                      className="hidden lg:block h-8 w-auto"
+                      src={logo}
+                      alt="WeCare"
+                    />
+                    <span className="hidden md:block color text-gray-100 px-3 py-2 rounded-md text-base font-bold">
+                      {" "}
+                      WeCare
+                    </span>
+                  </div>
                 </NavLink>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
@@ -120,7 +119,9 @@ const Navigationbar=() => {
                                   )}
                                 >
                                   WeCare premium &nbsp;
-                                  <span><CheckCircleIcon/></span>
+                                  <span>
+                                    <CheckCircleIcon />
+                                  </span>
                                 </a>
                               )}
                             </Menu.Item>
@@ -186,8 +187,10 @@ const Navigationbar=() => {
                                   )}
                                 >
                                   Offers &nbsp;
-                                  <span><CardGiftcardIcon /> </span>                       
-                                  </a>
+                                  <span>
+                                    <CardGiftcardIcon />{" "}
+                                  </span>
+                                </a>
                               )}
                             </Menu.Item>
                           </div>
@@ -275,9 +278,7 @@ const Navigationbar=() => {
                 </Menu> */}
                 <Menu>
                   <Menu.Button className="inline-flex items-center px-4 py-2 border-2 border-blue-700 shadow-sm text-sm text-blue-600 bg-transparent hover:bg-blue-600 hover:text-white rounded-full font-semibold ">
-                  <NavLink to="/userlogin">
-                    Login/Signup
-                  </NavLink>
+                    <NavLink to="/register">Login/Signup</NavLink>
                   </Menu.Button>
                 </Menu>
               </div>

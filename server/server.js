@@ -8,8 +8,8 @@ const app = express();
 app.use(express.json());
 
 
-app.use('/api/auth',require('./routes/authRoute'));
-app.use('/api/private',require('./routes/privateRoute'));
+app.use('/user/auth',require('./routes/authRoute'));
+app.use('/user/private',require('./routes/privateRoute'));
 
 //Error handler 
 app.use(errorHandler);

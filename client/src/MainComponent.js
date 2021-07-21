@@ -3,7 +3,8 @@ import { Switch, Route, Redirect } from "react-router";
 import Consult from "./pages/Consult";
 import Doctors from "./pages/Doctors";
 import Home from './pages/Home';
-import UserLogin from './pages/UserLogin'
+import Social from "./pages/Social";
+import UserRegister from './pages/UserRegister';
 const MainComponent = () => {
     return (
         <div>
@@ -17,8 +18,11 @@ const MainComponent = () => {
                 <Route path="/consult" exact>
                     <Consult />
                 </Route>
-                <Route path="/userlogin" exact>
-                    <UserLogin />
+                <Route path="/social" exact>
+                    <Social />
+                </Route>
+                <Route path="/register" exact>
+                    <UserRegister />
                 </Route>
                 <Redirect from="*" to="/home" />
             </Switch>
