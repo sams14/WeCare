@@ -2,11 +2,11 @@ require('dotenv').config({path :"./.env"});
 const  express = require('express');
 const mongoose = require('mongoose');
 const errorHandler = require('./middleware/error');
-
+const cors = require('cors');
 
 const app = express();
 app.use(express.json());
-
+app.use(cors());
 
 app.use('/user/auth',require('./routes/authRoute'));
 app.use('/user/private',require('./routes/privateRoute'));

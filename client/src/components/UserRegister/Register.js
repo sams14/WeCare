@@ -1,11 +1,39 @@
 import { useState } from "react";
 import { GoogleLoginButton } from "react-social-login-buttons";
+import { signIn, signUp } from "../../action/auth";
+import axios from 'axios';
+
+const initialState = {
+  username: "",
+  email: "",
+  password: "",
+  confirmPassword: "",
+};
 
 const Register = () => {
   const [isSignUp, setisSignUp] = useState(false);
+  const [formData, setFormData] = useState(initialState);
   const toggle = () => {
     setisSignUp(!isSignUp);
   };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // console.log(isSignUp);
+    if(isSignUp)
+    {
+       signUp(formData);
+    }
+    else
+    {
+      signIn(formData);
+    }
+  };
+
+  const handleChange =(e)=>{
+    setFormData({...formData,[e.target.name]:e.target.value});
+    console.log(formData);
+  }
   return (
     <div>
       <div className="lg:flex">
@@ -18,15 +46,18 @@ const Register = () => {
               {isSignUp ? `SignUp` : `LogIn`}
             </h2>
             <div className="mt-8">
-              <form>
+              <form onSubmit={handleSubmit}>
                 {isSignUp && (
                   <div className="my-8">
                     <div className="text-sm font-bold text-gray-700 tracking-wide">
                       Username
                     </div>
                     <input
+                      value = {formData.username}
                       className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500"
-                      type=""
+                      type="text"
+                      name ="username"
+                      onChange = {handleChange}
                       placeholder="Mike Top"
                     />
                   </div>
@@ -36,8 +67,11 @@ const Register = () => {
                     Email Address
                   </div>
                   <input
+                    value = {formData.email}
                     className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500"
-                    type=""
+                    type="email"
+                    name ="email"
+                    onChange = {handleChange}
                     placeholder="mike@gmail.com"
                   />
                 </div>
@@ -61,8 +95,11 @@ const Register = () => {
                   </div>
 
                   <input
+                    value = {formData.password}
                     className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500"
-                    type=""
+                    type="password"
+                    name ="password"
+                    onChange = {handleChange}
                     placeholder="Enter password"
                   />
                 </div>
@@ -74,14 +111,18 @@ const Register = () => {
                       </div>
                     </div>
                     <input
+                      value = {formData.confirmPassword}
                       className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500"
-                      type=""
+                      type="password"
+                      name ="confirmPassword"
+                      onChange = {handleChange}
                       placeholder="Confirm password"
                     />
                   </div>
                 )}
                 <div className="mt-8">
                   <button
+                    type="submit"
                     className="bg-indigo-500 text-gray-100 p-4 w-full rounded-full tracking-wide
                                 font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-indigo-600
                                 shadow-lg"
@@ -90,26 +131,25 @@ const Register = () => {
                   </button>
                 </div>
                 <div className="mt-5 text-sm font-display font-semibold text-gray-700 text-center">
-                {isSignUp
-                  ? `Already have an account ? `
-                  : `Don't have an account ?`}
-                <span
-                  onClick={toggle}
-                  className="cursor-pointer text-indigo-600 hover:text-indigo-800"
-                >
-                  {isSignUp ? `SignIn` : `SignUp`}
-                </span>
-              </div>
+                  {isSignUp
+                    ? `Already have an account ? `
+                    : `Don't have an account ?`}
+                  <span
+                    onClick={toggle}
+                    className="cursor-pointer text-indigo-600 hover:text-indigo-800"
+                  >
+                    {isSignUp ? `SignIn` : `SignUp`}
+                  </span>
+                </div>
                 <div className="mt-4">
                   <hr />
                 </div>
                 <div className="mt-4 lg:flex">
-                  <GoogleLoginButton style={{margin:'auto'}}>
+                  <GoogleLoginButton style={{ margin: "auto" }}>
                     <span>Login With Google</span>
                   </GoogleLoginButton>
                 </div>
               </form>
-
             </div>
           </div>
         </div>
