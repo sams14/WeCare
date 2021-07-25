@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { GoogleLoginButton } from "react-social-login-buttons";
 import { signIn, signUp } from "../../action/auth";
-import axios from 'axios';
+import { GoogleLogin } from "react-google-login";
+import { Button} from '@material-ui/core'
+import LockOutLinedIcon from "@material-ui/icons/LockOutlined";
 
 const initialState = {
   username: "",
@@ -34,6 +36,25 @@ const Register = () => {
     setFormData({...formData,[e.target.name]:e.target.value});
     console.log(formData);
   }
+
+  const googleSuccess = async (res) => {
+    //some time we dont have the res object so if we use ?. then it will not throw error
+    const result = res?.profileObj; //if not present then it set undefined
+    const token = res?.tokenId;
+
+    // try {
+    //     //set the user to the redux store
+    //     dispatch({ type: 'AUTH', data: { result, token } })
+    //     history.push('/');
+    // } catch (error) {
+    //     console.log(error);
+    // }
+    console.log(res);
+  }
+  const googleError = (error) => {
+    console.log(error);
+    console.log("Google Sign In was unsuccessful. Try Again Later.");
+}
   return (
     <div>
       <div className="lg:flex">
@@ -145,9 +166,27 @@ const Register = () => {
                   <hr />
                 </div>
                 <div className="mt-4 lg:flex">
-                  <GoogleLoginButton style={{ margin: "auto" }}>
+                  {/* <GoogleLoginButton style={{ margin: "auto" }}>
                     <span>Login With Google</span>
-                  </GoogleLoginButton>
+                  </GoogleLoginButton> */}
+                  <GoogleLoginButton
+                        clientId="943069858541-s47068s3n10fbjrei80n7acc1ol7op5p.apps.googleusercontent.com"
+                        render={(renderProps) => (
+                            <Button
+                                color="secondary"
+                                fullWidth
+                                onClick={renderProps.onClick}
+                                disabled={renderProps.disabled}
+                                startIcon={<LockOutLinedIcon />}
+                                variant="outlined"
+                            >
+                                Google Sign In
+                            </Button>
+                        )}
+                        onSuccess={googleSuccess}
+                        onFailure={googleError}
+                        cookiePolicy="single_host_origin"
+                    />
                 </div>
               </form>
             </div>
