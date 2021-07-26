@@ -4,6 +4,8 @@ import { signIn, signUp } from "../../action/auth";
 import { GoogleLogin } from "react-google-login";
 import { Button} from '@material-ui/core'
 import LockOutLinedIcon from "@material-ui/icons/LockOutlined";
+import {useHistory} from "react-router-dom";
+import axios from "axios";
 
 const initialState = {
   username: "",
@@ -18,38 +20,47 @@ const Register = () => {
   const toggle = () => {
     setisSignUp(!isSignUp);
   };
+  const history = useHistory();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     // console.log(isSignUp);
     if(isSignUp)
     {
-       signUp(formData);
+       signUp(formData,history);
     }
     else
     {
-      signIn(formData);
+      signIn(formData,history);
     }
   };
 
   const handleChange =(e)=>{
     setFormData({...formData,[e.target.name]:e.target.value});
-    console.log(formData);
+    // console.log(formData);
   }
 
   const googleSuccess = async (res) => {
     //some time we dont have the res object so if we use ?. then it will not throw error
     const result = res?.profileObj; //if not present then it set undefined
     const token = res?.tokenId;
+    
+    console.log("result",result.name);
+    let userCredentials = {username:result.name,email:result.email,password:result.googleId,confirmPassword:result.googleId};
 
-    // try {
-    //     //set the user to the redux store
-    //     dispatch({ type: 'AUTH', data: { result, token } })
-    //     history.push('/');
-    // } catch (error) {
-    //     console.log(error);
-    // }
-    console.log(res);
+    console.log("google formdata",userCredentials);
+    signUp(userCredentials,history);
+
+    
+    try {
+        //set the user to the redux store
+        // localStorage.setItem("profile",JSON.stringify({result,token}));
+        history.push('/');
+
+    } catch (error) {
+        console.log(error);
+    }
+    // console.log(res);
   }
   const googleError = (error) => {
     console.log(error);
@@ -169,7 +180,7 @@ const Register = () => {
                   {/* <GoogleLoginButton style={{ margin: "auto" }}>
                     <span>Login With Google</span>
                   </GoogleLoginButton> */}
-                  <GoogleLoginButton
+                  <GoogleLogin
                         clientId="943069858541-s47068s3n10fbjrei80n7acc1ol7op5p.apps.googleusercontent.com"
                         render={(renderProps) => (
                             <Button

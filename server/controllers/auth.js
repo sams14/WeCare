@@ -7,6 +7,11 @@ const crypto = require("crypto");
 exports.register = async (req, res, next) => {
   const { username, email, password } = req.body;
 
+  User.findOne({ email: email }, (error, data) => {
+    console.log(error, data);
+    if (error) return res.status(500).send("something went wrong");
+    if (data) return res.status(304).send("User already exists");
+  });
   try {
     const user = await User.create({
       username,
@@ -43,6 +48,8 @@ exports.login = async (req, res, next) => {
       return next(new ErrorResponse("Invalid Credentials", 401));
     }
     sendToken(user, 200, res);
+    // console.log(userDetails);
+    // console.log(user);
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });
   }
@@ -101,7 +108,7 @@ exports.resetpassword = async (req, res, next) => {
   try {
     const user = await User.findOne({
       resetPasswordToken,
-      resetPasswordExpire: { $gt: Date.now() }
+      resetPasswordExpire: { $gt: Date.now() },
     });
     if (!user) {
       return next(new ErrorResponse("Invalid reset token", 400));
@@ -121,7 +128,13 @@ exports.resetpassword = async (req, res, next) => {
   }
 };
 
+exports.getuserdata = async (req, res, next) => {
+  User.find()
+    .then((data) => res.json(data))
+    .catch((err) => res.status(400).json("Error:" + err));
+};
+
 const sendToken = (user, statusCode, res) => {
   const token = user.getSignedToken();
-  res.status(statusCode).json({ success: true, token });
+  res.status(statusCode).json({ result: user, token });
 };
