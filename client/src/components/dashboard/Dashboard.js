@@ -45,9 +45,9 @@ const Dashboard = () => {
           {/* add routes without layouts */}
           <Route path="/landing" exact component={Landing} />
           <Route path="/profile" exact component={Profile} />
-          <Route path="/" exact component={Index} />
+          <Route path="/index" exact component={Index} />
           {/* add redirect for first page */}
-          <Redirect from="*" to="/auth" />
+          <Redirect from="*" to="/admin" />
         </Switch>
       </BrowserRouter>
     </div>

@@ -6,6 +6,7 @@ import Doctors from "./pages/Doctors";
 import Home from './pages/Home';
 import Social from "./pages/Social";
 import UserRegister from './pages/UserRegister';
+
 const MainComponent = () => {
     return (
         <div>
