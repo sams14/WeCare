@@ -8,8 +8,8 @@ export const signUp = async (formData, history) => {
     history.push("/");
   } 
   catch (error) {
-    console.log(error,error.statusCode);
-    if (error.statusCode == 304) {
+    console.log(error,error.response);
+    if (error.response.status == 304) {
     console.log("success");
       signIn(formData, history);
     }
