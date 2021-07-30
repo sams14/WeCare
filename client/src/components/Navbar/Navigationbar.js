@@ -231,9 +231,9 @@ const Navigationbar = () => {
                             <Avatar
                               className="h-8 w-8 rounded-full"
                               src= ""
-                              alt= {user ?. data.result.username}
+                              alt= ""
                             >
-                              (user?. result.name.charAt(0))
+                              {user?. data.result.username.charAt(0)}
                             </Avatar>
                           </Menu.Button>
                         </div>

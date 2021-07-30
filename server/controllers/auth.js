@@ -9,8 +9,10 @@ exports.register = async (req, res, next) => {
 
   User.findOne({ email: email }, (error, data) => {
     console.log(error, data);
-    if (error) return res.status(500).send("something went wrong");
-    if (data) return res.status(304).send("User already exists");
+    if (error) return next(new ErrorResponse("something went wrong", 500));
+    if (data) {
+      return next(new ErrorResponse("User already exists", 304));
+    }
   });
   try {
     const user = await User.create({
