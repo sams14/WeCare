@@ -253,7 +253,8 @@ const Navigationbar = () => {
                           >
                             <Menu.Item>
                               {({ active }) => (
-                                <a
+                                <NavLink
+                                  to = "/dashboard"
                                   href="#"
                                   className={classNames(
                                     active ? "bg-gray-100" : "",
@@ -261,6 +262,7 @@ const Navigationbar = () => {
                                   )}
                                 >
                                   Your Profile
+                                </NavLink>
                                 </a>
                               )}
                             </Menu.Item>
