@@ -13,7 +13,6 @@ exports.register = async (req, res, next) => {
     if (data) {
       return next(new ErrorResponse("User already exists", 304));
     }
-
   });
   try {
     const user = await User.create({
