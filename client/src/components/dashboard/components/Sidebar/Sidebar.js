@@ -92,7 +92,7 @@ export default function Sidebar() {
                       ? "text-lightBlue-500 hover:text-lightBlue-600"
                       : "text-blueGray-700 hover:text-blueGray-500")
                   }
-                  to="/user/dashboard"
+                  to="/user/social"
                 >
                   <i
                     className={
@@ -102,7 +102,7 @@ export default function Sidebar() {
                         : "text-blueGray-300")
                     }
                   ></i>{" "}
-                  Dashboard
+                  Social
                 </Link>
               </li>
 
@@ -114,7 +114,7 @@ export default function Sidebar() {
                       ? "text-lightBlue-500 hover:text-lightBlue-600"
                       : "text-blueGray-700 hover:text-blueGray-500")
                   }
-                  to="/user/settings"
+                  to="/user/econsult"
                 >
                   <i
                     className={
@@ -124,7 +124,7 @@ export default function Sidebar() {
                         : "text-blueGray-300")
                     }
                   ></i>{" "}
-                  Settings
+                  E-Consult
                 </Link>
               </li>
 
@@ -136,7 +136,7 @@ export default function Sidebar() {
                       ? "text-lightBlue-500 hover:text-lightBlue-600"
                       : "text-blueGray-700 hover:text-blueGray-500")
                   }
-                  to="/user/tables"
+                  to="/user/diagnostics"
                 >
                   <i
                     className={
@@ -146,7 +146,7 @@ export default function Sidebar() {
                         : "text-blueGray-300")
                     }
                   ></i>{" "}
-                  Tables
+                  Diagnostics
                 </Link>
               </li>
 
@@ -158,7 +158,7 @@ export default function Sidebar() {
                       ? "text-lightBlue-500 hover:text-lightBlue-600"
                       : "text-blueGray-700 hover:text-blueGray-500")
                   }
-                  to="/user/maps"
+                  to="/user/doctors"
                 >
                   <i
                     className={
@@ -168,7 +168,7 @@ export default function Sidebar() {
                         : "text-blueGray-300")
                     }
                   ></i>{" "}
-                  Maps
+                  Dcotors
                 </Link>
               </li>
             </ul>

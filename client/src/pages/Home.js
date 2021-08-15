@@ -1,5 +1,6 @@
 import React from 'react'
 import HeroDescription from '../components/HeroSection/HeroDescription';
+import HeroLabDescription from '../components/HeroSection/HeroLabDescription';
 import Hero from '../components/HeroSection/Hero';
 import HeroAppDownload from '../components/HeroSection/HeroAppDownload';
 import Statistic from '../components/Statistics/Statistic';
@@ -10,11 +11,10 @@ const Home = () => {
         <div>
             <Hero />
             <HeroDescription />
+            <HeroLabDescription />
             <Features />
-            <HeroAppDownload />
             <Statistic />
             <HeroAppDownload />
-            <Statistic />
         </div>
     )
 }
