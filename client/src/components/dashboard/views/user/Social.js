@@ -1,15 +1,14 @@
 import React from 'react'
 
+import SocialPage from "../../components/Social/pages/home/Home";
+
 const Social = () => {
     console.log('Social');
     return (
         <div className="flex flex-wrap">
-
-        <h1 style = {{color: 'red'}}>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis rem deserunt eius enim soluta doloremque quis exercitationem ullam, neque a quasi unde nobis eos obcaecati aut expedita! Aut, blanditiis minima!
-        </h1>
+            <SocialPage />
         </div>
     )
 }
 
-export default Social
+export default Social;

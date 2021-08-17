@@ -9,10 +9,7 @@ import HeaderStats from "../components/Headers/HeaderStats.js";
 import FooterAdmin from "../components/Footers/FooterAdmin.js";
 
 // views
-import Dashboard from "../views/user/Dashboard.js";
-import Maps from "../views/user/Maps.js";
-import Settings from "../views/user/Settings.js";
-import Tables from "../views/user/Tables.js";
+
 import Social from "../views/user/Social.js";
 import Econsult from "../views/user/Econsult.js";
 import Diagnostics from "../views/user/Diagnostics.js";

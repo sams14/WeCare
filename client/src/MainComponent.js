@@ -4,7 +4,6 @@ import Dashboard from "./components/dashboard/Dashboard";
 import Consult from "./pages/Consult";
 import Doctors from "./pages/Doctors";
 import Home from './pages/Home';
-import Social from "./pages/Social";
 import UserRegister from './pages/UserRegister';
 
 const MainComponent = () => {
@@ -19,9 +18,6 @@ const MainComponent = () => {
                 </Route>
                 <Route path="/consult" exact>
                     <Consult />
-                </Route>
-                <Route path="/social" exact>
-                    <Social />
                 </Route>
                 <Route path="/register" exact>
                     <UserRegister />

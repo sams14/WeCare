@@ -8,13 +8,9 @@ import "./assets/styles/tailwind.css";
 // // layouts
 
 import User from "./layouts/User.js";
-import Auth from "./layouts/Auth.js";
 
 // // views without layouts
 
-import Landing from "./views/Landing.js";
-import Profile from "./views/Profile.js";
-import Index from "./views/Index.js";
 
 // ReactDOM.render(
 // <BrowserRouter>
@@ -41,11 +37,6 @@ const Dashboard = () => {
         <Switch>
           {/* add routes with layouts */}
           <Route path="/user" component={User} />
-          <Route path="/auth" component={Auth} />
-          {/* add routes without layouts */}
-          <Route path="/landing" exact component={Landing} />
-          <Route path="/profile" exact component={Profile} />
-          <Route path="/index" exact component={Index} />
           {/* add redirect for first page */}
           <Redirect from="*" to="/user" />
         </Switch>
