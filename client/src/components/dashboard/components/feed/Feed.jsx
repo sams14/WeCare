@@ -1,7 +1,7 @@
 import Post from "../post/Post";
-import Share from "../share/Share";
+import Share from "../../../dummy/views/user/share/Share";
 import "./feed.css";
-import { Posts } from "../../dummyData";
+import { Posts } from "../../views/user/dummyData";
 
 export default function Feed() {
   return (
