@@ -7,7 +7,7 @@ const Social = () => {
   console.log("Social");
   return (
         
-      <div className="flex w-full flex-wrap mt-4 mb-8 content-center mt-20 py-5">
+      <div className="flex w-full flex-wrap mb-8 content-center  py-5">
         <Feed />
         <Rightbar />
     </div>
