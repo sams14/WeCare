@@ -8,7 +8,7 @@ const Demo = () => {
             </h1>
             <p>
                 lorem ipsum dolor sit amet, subway tile poke farmlorem23
-                lorem23
+                This is a paragraph to test the project
             </p>
         </div>
     )
