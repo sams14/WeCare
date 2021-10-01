@@ -3,7 +3,9 @@ import React from 'react'
 const Demo = () => {
     return (
         <div>
-            This is demo page to test the working.
+            <h1>
+                This is a demo page for testing.
+            </h1>
         </div>
     )
 }
